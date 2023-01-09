@@ -22,7 +22,6 @@ func main() {
 		for _, val := range a {
 			input <- val
 		}
-
 	}()
 
 	// Подсчет и запись результатов во 2 канал
@@ -33,7 +32,7 @@ func main() {
 		}
 	}()
 
-	// Чтение из 2 канала и вывод в консоль
+	// Чтение из 2 канала и вывод в stdout
 	for val := range output {
 		fmt.Println(val)
 	}

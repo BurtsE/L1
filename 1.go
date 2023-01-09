@@ -7,7 +7,7 @@ type Human []int64
 func (h *Human) myName() {
 	fmt.Println("i am human")
 }
-
+// Фактически наследования нет
 // У структуры Action появляется атрибут с именем Human типа Human,
 // имеющий метод myName. Вызвать этот метод можно, не указывая явно сам атрибут (a.Human.myName())
 type Action struct {

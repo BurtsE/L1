@@ -27,6 +27,8 @@ func (db *DB) Update(id, val string) error {
 	return nil
 }
 
+
+
 // Структура, преобразующая интерфейс работы. Все методы принимают целые числа в качестве параметра
 type workWithDB struct {
 	db *DB

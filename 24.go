@@ -7,11 +7,23 @@ import (
 	"reflect"
 )
 
+type coord float32
+type Point struct {
+	x, y coord
+}
+
+func (p *Point) Point(x, y coord) {
+	p.x = x
+	p.y = y
+}
+
 func main() {
-	// Инициализация точек
+	// Инициализация точек (инкапсулированные поля доступны из текущего пакета, но недоступны в других)
 	p := channix.Point{}
-	p.Point(1, 2)
 	q := channix.Point{}
+
+	// В конструктор подаются не типизированные константы
+	p.Point(1, 2)
 	q.Point(2, 3)
 
 	d := Distance(p, q)

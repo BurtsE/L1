@@ -8,8 +8,8 @@ import (
 
 // Для работы с большими числами используются функции из стандартного пакета math/big
 func main() {
-	var a = 1.
-	var b = math.MaxFloat64 / 2.5
+	var a = math.MaxFloat64 / 1.5
+	var b = math.MaxFloat64 / 1.5
 
 	fmt.Println(Add(a, b))
 	fmt.Println(Subtract(a, b))

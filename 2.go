@@ -8,10 +8,10 @@ import (
 
 func main() {
 	var input = []int{2, 4, 6, 8, 10}
-	suqares(input)
+	squares(input)
 
 }
-func suqares(s []int) {
+func squares(s []int) {
 	// Создание группы для предотвращения печати до завершения расчетов
 	wg := new(sync.WaitGroup)
 	// Мьтекс для конкурентного (не параллельного) выполнения расчетов
