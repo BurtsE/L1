@@ -23,11 +23,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// Канал для записи
+	// Канал для получения сигнала о завершении
 	osCh := make(chan os.Signal, 1)
 	defer close(osCh)
 	signal.Notify(osCh, os.Interrupt, syscall.SIGTERM)
 
+	// Канал для записи
 	ch := make(chan interface{})
 	defer close(ch)
 
@@ -46,7 +47,7 @@ func main() {
 	// Запись данных в поток
 	for {
 		select {
-		// if we have mes for interrupt from OS - we do it
+		// При получени сигнала о завершении прекращаем работу
 		case <-osCh:
 			fmt.Println("End")
 
